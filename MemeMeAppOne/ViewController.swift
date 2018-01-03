@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ViewController : UIViewController,UITableViewDelegate,UITableViewDataSource{
+class ViewController : UITableViewController{
     
  
     
@@ -23,10 +23,11 @@ class ViewController : UIViewController,UITableViewDelegate,UITableViewDataSourc
     }
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.memes.count    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("VC")
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCellTable")!
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
