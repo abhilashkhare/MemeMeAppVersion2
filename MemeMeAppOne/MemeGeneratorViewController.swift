@@ -129,8 +129,7 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
         
         (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
         
-        let vc = ViewController()
-        self.present(vc, animated: true, completion: nil)
+        
   
     }
 
@@ -149,6 +148,8 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
     @IBAction func shareMeme()
     {
         savedMeme = generateMemedImage()
+        let vc = ViewController()
+        self.present(vc, animated: true, completion: nil)
     }
     
     func generateMemedImage() -> UIImage {
