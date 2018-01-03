@@ -128,10 +128,8 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
         let meme = Meme(topTextField : topText, bottomTextField : bottomText, originalimage : imageDisplay.image, memedImage : savedMeme)
         
         (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
-        print("Up")
-        let vc = ViewController()
-        print("Down")
         
+        let vc = ViewController()
         self.present(vc, animated: true, completion: nil)
   
     }
