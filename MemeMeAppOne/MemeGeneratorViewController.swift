@@ -149,8 +149,12 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
     {
         savedMeme = generateMemedImage()
        
-        let view = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        self.present(view, animated: true, completion: nil)
+        
+     //   let view = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+      //  self.present(view, animated: true, completion: nil)
+        
+         dismiss(animated: true, completion: nil)
+        
     }
     
     func generateMemedImage() -> UIImage {
