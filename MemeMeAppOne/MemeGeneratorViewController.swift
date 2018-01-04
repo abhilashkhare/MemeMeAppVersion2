@@ -28,7 +28,7 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
          NSAttributedStringKey.strokeColor.rawValue : UIColor.black,
          NSAttributedStringKey.strokeWidth.rawValue : NSNumber(value : -5.0),
         NSAttributedStringKey.foregroundColor.rawValue : UIColor.white,
-        NSAttributedStringKey.font.rawValue : UIFont.init(name: "HelveticaNeue-CondensedBlack", size: 20)!
+        NSAttributedStringKey.font.rawValue : UIFont.init(name: "HelveticaNeue-CondensedBlack", size: 36)!
     ]
     
     func configText(textField : UITextField, text : String)
@@ -128,8 +128,7 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
         let meme = Meme(topTextField : topText, bottomTextField : bottomText, originalimage : imageDisplay.image, memedImage : savedMeme)
         
         (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
-        
-        
+
   
     }
 
@@ -147,14 +146,12 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
     
     @IBAction func shareMeme()
     {
+     
         savedMeme = generateMemedImage()
        
-        
-     //   let view = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-      //  self.present(view, animated: true, completion: nil)
-        
-         dismiss(animated: true, completion: nil)
-        
+      //  let storyboard = UIStoryboard(name: "ViewController", bundle: nil)
+        let view = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.present(view, animated: true, completion: nil)
     }
     
     func generateMemedImage() -> UIImage {
@@ -166,10 +163,7 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
         configValueBarButton(textField: share, value: false, color: UIColor.clear)
         configToolbar(toolbar: topToolbar, value: true)
         configToolbar(toolbar: bottomToolbar, value: true)
-       // let origColor:UIColor! = self.albumButton.tintColor
-        //print(origColor)
-        
-      
+       
   
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -198,6 +192,7 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
                 }
         
             }
+        // dismiss(animated: true, completion: nil)
      return memedImage
     }
     

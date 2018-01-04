@@ -65,9 +65,7 @@
                     <navigationItem key="navigationItem" id="98C-cS-125">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6AF-4h-hlN">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorBarButtonItem="6AF-4h-hlN" id="80a-IS-L7M">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="80a-IS-L7M"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -193,7 +191,7 @@
         <scene sceneID="K4r-Kd-lPC">
             <objects>
                 <navigationController id="JP7-Rp-4F7" userLabel="CollectionViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="m0g-7Z-BHx"/>
+                    <tabBarItem key="tabBarItem" title="Collection" id="m0g-7Z-BHx"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dmj-cX-6PM">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -264,9 +262,7 @@
                     <navigationItem key="navigationItem" id="JJI-P7-sYT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1q9-nf-WCi">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorBarButtonItem="1q9-nf-WCi" id="zhH-7R-17B">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="zhH-7R-17B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
