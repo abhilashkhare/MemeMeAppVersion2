@@ -129,7 +129,6 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
         
         (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
 
-  
     }
 
     func configValueBarButton(textField : UIBarButtonItem, value : Bool, color : UIColor)
@@ -148,10 +147,24 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
     {
      
         savedMeme = generateMemedImage()
-       
+        let ac : UIActivityViewController = UIActivityViewController(activityItems: [savedMeme], applicationActivities: nil)
+        self.present(ac, animated: true, completion: nil)
+        
+        ac.completionWithItemsHandler =
+            {
+                (activityType,completed,items,errors) in
+                if(completed)
+                {
+                    self.save()
+                    ac.dismiss(animated: true, completion: nil)
+                   
+                }
+                
+        }
+        
       //  let storyboard = UIStoryboard(name: "ViewController", bundle: nil)
-        let view = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        self.present(view, animated: true, completion: nil)
+        let view = storyboard?.instantiateViewController(withIdentifier: "ViewController") 
+        self.present(view!, animated: true, completion: nil)
     }
     
     func generateMemedImage() -> UIImage {
@@ -180,21 +193,9 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
         configToolbar(toolbar: topToolbar, value: false)
         configToolbar(toolbar: bottomToolbar, value: false)
        
-        let ac : UIActivityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        self.present(ac, animated: true, completion: nil)
-        
-        ac.completionWithItemsHandler =
-            {
-                (activityType,completed,items,errors) in
-                if(completed)
-                {
-                 self.save()
-                }
-        
-            }
+     
         // dismiss(animated: true, completion: nil)
      return memedImage
     }
-    
 }
 
