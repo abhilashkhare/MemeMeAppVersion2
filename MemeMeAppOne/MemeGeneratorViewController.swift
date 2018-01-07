@@ -147,16 +147,17 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
     {
      
         savedMeme = generateMemedImage()
-        let ac : UIActivityViewController = UIActivityViewController(activityItems: [savedMeme], applicationActivities: nil)
-        self.present(ac, animated: true, completion: nil)
+        let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [savedMeme], applicationActivities: nil)
+        self.present(activityViewController, animated: true, completion: nil)
         
-        ac.completionWithItemsHandler =
+        activityViewController.completionWithItemsHandler =
             {
                 (activityType,completed,items,errors) in
                 if(completed)
                 {
                     self.save()
-                    ac.dismiss(animated: true, completion: nil)
+                    activityViewController.dismiss(animated: true, completion: nil)
+                    self.dismiss(animated: true, completion: nil)
                    
                 }
                 
