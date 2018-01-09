@@ -28,7 +28,7 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
          NSAttributedStringKey.strokeColor.rawValue : UIColor.black,
          NSAttributedStringKey.strokeWidth.rawValue : NSNumber(value : -5.0),
         NSAttributedStringKey.foregroundColor.rawValue : UIColor.white,
-        NSAttributedStringKey.font.rawValue : UIFont.init(name: "HelveticaNeue-CondensedBlack", size: 36)!
+        NSAttributedStringKey.font.rawValue : UIFont.init(name: "HelveticaNeue-CondensedBlack", size: 42)!
     ]
     
     func configText(textField : UITextField, text : String)

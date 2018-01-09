@@ -20,20 +20,28 @@ class ViewController : UITableViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         memes = appDelegate.memes
+        self.tableView.reloadData()
     }
     
+  
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+       
         return self.memes.count    }
     
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("VC")
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCellTable")!
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
-        cell.imageView?.image = meme.memedImage
-        cell.textLabel?.text = meme.topTextField.text
+    //    tableView.estimatedRowHeight = 200
+        tableView.rowHeight = 100
         
+        cell.imageView?.image = meme.memedImage
+        cell.textLabel?.text = meme.topTextField.text! + "..." + meme.bottomTextField.text!
         return cell
         
 }
