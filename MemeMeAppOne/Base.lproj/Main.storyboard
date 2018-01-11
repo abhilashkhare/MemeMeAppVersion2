@@ -43,7 +43,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="121.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KdA-Nq-L8o">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KdA-Nq-L8o">
                                             <rect key="frame" x="0.0" y="-4" width="161" height="129"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="161" id="I9P-CL-cLD"/>
@@ -157,6 +157,11 @@
                                             <action selector="shareMeme" destination="BYZ-38-t0r" id="uWB-An-MGI"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Cancel" width="364" id="irU-ND-EbS">
+                                        <connections>
+                                            <action selector="cancelButton" destination="BYZ-38-t0r" id="G92-mj-wEV"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -198,6 +203,36 @@
             </objects>
             <point key="canvasLocation" x="135" y="133.09859154929578"/>
         </scene>
+        <!--Meme Me Detail View Controller-->
+        <scene sceneID="n1O-i9-CRN">
+            <objects>
+                <viewController storyboardIdentifier="MemeMeDetailViewController" id="NXT-LL-aKO" customClass="MemeMeDetailViewController" customModule="MemeMeAppOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fC9-fF-aOd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ted-wD-t11">
+                                <rect key="frame" x="67" y="195" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="ted-wD-t11" firstAttribute="centerX" secondItem="fC9-fF-aOd" secondAttribute="centerX" id="1Qp-Oo-uPk"/>
+                            <constraint firstItem="QUJ-Ow-Nak" firstAttribute="bottom" secondItem="ted-wD-t11" secondAttribute="bottom" constant="232" id="3oU-Gx-Wnk"/>
+                            <constraint firstItem="ted-wD-t11" firstAttribute="leading" secondItem="QUJ-Ow-Nak" secondAttribute="leading" constant="67" id="cud-8b-wql"/>
+                            <constraint firstItem="ted-wD-t11" firstAttribute="top" secondItem="QUJ-Ow-Nak" secondAttribute="top" constant="175" id="wre-dz-aTU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QUJ-Ow-Nak"/>
+                    </view>
+                    <connections>
+                        <outlet property="memeImageView" destination="ted-wD-t11" id="yQu-gy-WeI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RY2-gv-Pe6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="142.57871064467767"/>
+        </scene>
         <!--CollectionViewController-->
         <scene sceneID="K4r-Kd-lPC">
             <objects>
@@ -238,30 +273,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="152" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S6j-w2-nBJ">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S6j-w2-nBJ">
                                             <rect key="frame" x="10" y="10" width="132" height="122"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bottom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pat-Fd-WEH">
-                                            <rect key="frame" x="32" y="102" width="88" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSI-cH-DtD">
-                                            <rect key="frame" x="32" y="20" width="88" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </view>
                                 <connections>
-                                    <outlet property="bottom" destination="Pat-Fd-WEH" id="LDi-hc-CGM"/>
                                     <outlet property="memeImage" destination="S6j-w2-nBJ" id="3e3-Ze-iT5"/>
-                                    <outlet property="top" destination="WSI-cH-DtD" id="LG6-6u-sPc"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -291,6 +310,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="80a-IS-L7M"/>
+        <segue reference="zhH-7R-17B"/>
     </inferredMetricsTieBreakers>
 </document>

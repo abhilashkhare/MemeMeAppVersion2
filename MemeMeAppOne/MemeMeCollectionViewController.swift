@@ -32,7 +32,7 @@ class MemeMeCollectionViewController: UICollectionViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        print("viewwillappear")
+        
         memes = appDelegate.memes
         self.collectionView?.reloadData()
         
@@ -40,25 +40,28 @@ class MemeMeCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          print(self.memes.count)
-        print("collectionview---numberofitems")
         return self.memes.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         print("collectionview----cellforitematbefore")
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath)
             as!  MemeCollectionViewCell
-         print("collectionview----cellforitemat")
-        let meme = self.memes[(indexPath as NSIndexPath).row]
-        
        
+        let meme = self.memes[(indexPath as NSIndexPath).row]
+  
         cell.memeImage.image = meme.memedImage
-        cell.top.text = meme.topTextField.text
-        cell.bottom.text = meme.bottomTextField.text
+       
     
         return cell
         
         
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MemeMeDetailViewController") as! MemeMeDetailViewController
+        detailViewController.meme = self.memes[(indexPath as NSIndexPath).row]
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     
     

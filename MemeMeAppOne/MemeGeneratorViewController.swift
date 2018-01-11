@@ -116,13 +116,6 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
         return true;
     }
     
-//    struct Meme {
-//        let topTextField : UITextField!
-//        let bottomTextField : UITextField!
-//        let originalimage : UIImage!
-//        let memedImage : UIImage!
-//    }
-
     
     func save(){
         let meme = Meme(topTextField : topText, bottomTextField : bottomText, originalimage : imageDisplay.image, memedImage : savedMeme)
@@ -167,6 +160,12 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
         let view = storyboard?.instantiateViewController(withIdentifier: "ViewController") 
         self.present(view!, animated: true, completion: nil)
     }
+    
+    @IBAction func cancelButton()
+    {
+         self.dismiss(animated: true, completion: nil)
+    }
+    
     
     func generateMemedImage() -> UIImage {
         

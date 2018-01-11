@@ -45,6 +45,13 @@ class ViewController : UITableViewController{
         return cell
         
 }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailedViewController = self.storyboard?.instantiateViewController(withIdentifier: "MemeMeDetailViewController") as! MemeMeDetailViewController
+        
+        detailedViewController.meme = self.memes[(indexPath as NSIndexPath).row ]
+        self.navigationController?.pushViewController(detailedViewController, animated: true)
+    }
 
 
 }
