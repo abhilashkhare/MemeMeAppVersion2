@@ -211,17 +211,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ted-wD-t11">
-                                <rect key="frame" x="67" y="195" width="240" height="240"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ted-wD-t11">
+                                <rect key="frame" x="70" y="50" width="240" height="240"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="0TK-ct-Oip"/>
+                                    <constraint firstAttribute="width" constant="240" id="UCZ-fI-2Qg"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="ted-wD-t11" firstAttribute="centerX" secondItem="fC9-fF-aOd" secondAttribute="centerX" id="1Qp-Oo-uPk"/>
-                            <constraint firstItem="QUJ-Ow-Nak" firstAttribute="bottom" secondItem="ted-wD-t11" secondAttribute="bottom" constant="232" id="3oU-Gx-Wnk"/>
-                            <constraint firstItem="ted-wD-t11" firstAttribute="leading" secondItem="QUJ-Ow-Nak" secondAttribute="leading" constant="67" id="cud-8b-wql"/>
-                            <constraint firstItem="ted-wD-t11" firstAttribute="top" secondItem="QUJ-Ow-Nak" secondAttribute="top" constant="175" id="wre-dz-aTU"/>
+                            <constraint firstItem="ted-wD-t11" firstAttribute="top" secondItem="QUJ-Ow-Nak" secondAttribute="top" constant="30" id="4VC-cQ-SWS"/>
+                            <constraint firstItem="ted-wD-t11" firstAttribute="leading" secondItem="QUJ-Ow-Nak" secondAttribute="leading" constant="30" id="KzR-Nn-DoJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QUJ-Ow-Nak"/>
                     </view>
@@ -231,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RY2-gv-Pe6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1132" y="142.57871064467767"/>
+            <point key="canvasLocation" x="1131.1844077961021" y="141.59999999999999"/>
         </scene>
         <!--CollectionViewController-->
         <scene sceneID="K4r-Kd-lPC">

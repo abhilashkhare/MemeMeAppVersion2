@@ -156,7 +156,7 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
                 
         }
         
-      //  let storyboard = UIStoryboard(name: "ViewController", bundle: nil)
+      
         let view = storyboard?.instantiateViewController(withIdentifier: "ViewController") 
         self.present(view!, animated: true, completion: nil)
     }
@@ -183,7 +183,7 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-       // savedMeme = memedImage
+
         // TODO: Show toolbar and navbar
          cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         configValueBarButton(textField: albumButton, value: true, color: self.view.tintColor)
@@ -193,8 +193,6 @@ class MemeGeneratorViewController: UIViewController,UIImagePickerControllerDeleg
         configToolbar(toolbar: topToolbar, value: false)
         configToolbar(toolbar: bottomToolbar, value: false)
        
-     
-        // dismiss(animated: true, completion: nil)
      return memedImage
     }
 }

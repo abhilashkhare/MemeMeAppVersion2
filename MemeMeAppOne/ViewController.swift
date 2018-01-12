@@ -37,7 +37,7 @@ class ViewController : UITableViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCellTable")!
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
-    //    tableView.estimatedRowHeight = 200
+
         tableView.rowHeight = 100
         
         cell.imageView?.image = meme.memedImage

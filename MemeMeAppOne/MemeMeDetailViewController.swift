@@ -28,4 +28,5 @@ class MemeMeDetailViewController: UIViewController{
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    
 }
