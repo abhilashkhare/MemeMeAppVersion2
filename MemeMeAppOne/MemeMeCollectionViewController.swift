@@ -29,13 +29,9 @@ class MemeMeCollectionViewController: UICollectionViewController {
         flowLayout.itemSize = CGSize(width: dimension, height: heightCell)
     }
 
-    
-    
     override func viewWillAppear(_ animated: Bool) {
-        
         memes = appDelegate.memes
         self.collectionView?.reloadData()
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -49,13 +45,8 @@ class MemeMeCollectionViewController: UICollectionViewController {
             as!  MemeCollectionViewCell
        
         let meme = self.memes[(indexPath as NSIndexPath).row]
-  
         cell.memeImage.image = meme.memedImage
-       
-    
         return cell
-        
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -63,7 +54,4 @@ class MemeMeCollectionViewController: UICollectionViewController {
         detailViewController.meme = self.memes[(indexPath as NSIndexPath).row]
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
-    
-    
-
 }

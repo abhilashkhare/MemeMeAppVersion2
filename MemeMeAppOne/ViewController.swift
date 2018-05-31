@@ -10,48 +10,32 @@ import Foundation
 import UIKit
 
 class ViewController : UITableViewController{
-    
- 
-    
+   
     var  memes = [Meme]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    
-    
+ 
     override func viewWillAppear(_ animated: Bool) {
         memes = appDelegate.memes
         self.tableView.reloadData()
     }
-    
-  
-    
+ 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-       
-        return self.memes.count    }
-    
-    
-    
+        return self.memes.count
+    }
+  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCellTable")!
         let meme = self.memes[(indexPath as NSIndexPath).row]
-        
-
         tableView.rowHeight = 100
-        
         cell.imageView?.image = meme.memedImage
         cell.textLabel?.text = meme.topTextField.text! + "..." + meme.bottomTextField.text!
         return cell
-        
 }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailedViewController = self.storyboard?.instantiateViewController(withIdentifier: "MemeMeDetailViewController") as! MemeMeDetailViewController
-        
         detailedViewController.meme = self.memes[(indexPath as NSIndexPath).row ]
         self.navigationController?.pushViewController(detailedViewController, animated: true)
     }
-
-
 }
